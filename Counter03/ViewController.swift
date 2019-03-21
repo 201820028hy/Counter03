@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         count = count + 1
         lbCount.text = String.init(count)
         if(count == 10) {
-            count = 1
+            count = 0
             lbCount.text = "0"
         }
     }
