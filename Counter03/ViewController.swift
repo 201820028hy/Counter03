@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lbCount: UILabel!
     var count = 0
+    var back = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +21,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnCount(_ sender: Any) {
-        count = count + 1
         lbCount.text = String.init(count)
-        if(count == 10) {
-            count = 0
-            lbCount.text = "0"
+        if (back == true) {
+            count += 1
+            if(count == 9) {
+                back = false
+            }
+        } else {
+            count -= 1
+            if(count == 0) {
+                back = true
+            }
+            
         }
+        
     }
     
 }
